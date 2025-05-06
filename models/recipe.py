@@ -11,6 +11,8 @@ class DishType(Enum):
     SIDE = "Side Dish"
     SALAD = "Salad"
     SOUP = "Soup"
+    SNACK = "Snack"
+    BREAKFAST = "Breakfast"
     BEVERAGE = "Beverage"
     OTHER = "Other"
 

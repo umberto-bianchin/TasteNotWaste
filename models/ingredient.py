@@ -6,4 +6,3 @@ class Ingredient:
     name: str
     amount: int
     unit: str
-
