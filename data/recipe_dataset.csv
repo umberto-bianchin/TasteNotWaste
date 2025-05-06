@@ -1,0 +1,60 @@
+name,ingredients,prep_time_minutes,description,dish_type
+Creamy Tuna Pasta,Canned Beans: 39g/ml/pcs; Potatoes: 194g/ml/pcs; Parmesan: 83g/ml/pcs; Pasta: 181g/ml/pcs; Chicken Breast: 31g/ml/pcs; Basil: 109g/ml/pcs,38,"Combine Canned Beans, Potatoes, then add the rest. Cook for 38 minutes.",Salad
+Cheddar Omelette,Cheddar Cheese: 132g/ml/pcs; Tomatoes: 166g/ml/pcs; Butter: 155g/ml/pcs,27,"Combine Cheddar Cheese, Tomatoes, then add the rest. Cook for 27 minutes.",Side Dish
+Grilled Chicken Salad,Mustard: 69g/ml/pcs; Rice: 40g/ml/pcs; Can of Tuna: 18g/ml/pcs; Basil: 35g/ml/pcs,31,"Combine Mustard, Rice, then add the rest. Cook for 31 minutes.",Soup
+Zucchini Stir Fry,Rice: 155g/ml/pcs; Flour: 105g/ml/pcs; Olive Oil: 79g/ml/pcs; Basil: 108g/ml/pcs,15,"Combine Rice, Flour, then add the rest. Cook for 15 minutes.",Snack
+Garlic Mashed Potatoes,Butter: 183g/ml/pcs; Lettuce: 135g/ml/pcs; Salmon Fillet: 37g/ml/pcs,31,"Combine Butter, Lettuce, then add the rest. Cook for 31 minutes.",Side Dish
+Tomato Basil Soup,Yogurt: 185g/ml/pcs; Eggs: 150g/ml/pcs; Flour: 96g/ml/pcs; Canned Beans: 54g/ml/pcs; Can of Tuna: 136g/ml/pcs; Onion: 109g/ml/pcs,16,"Combine Yogurt, Eggs, then add the rest. Cook for 16 minutes.",Snack
+Vegetable Fried Rice,Mayonnaise: 3g/ml/pcs; Lettuce: 28g/ml/pcs; Ground Beef: 13g/ml/pcs; Sugar: 94g/ml/pcs,25,"Combine Mayonnaise, Lettuce, then add the rest. Cook for 25 minutes.",Breakfast
+Beef and Carrot Stew,Sugar: 92g/ml/pcs; Basil: 178g/ml/pcs; Can of Tuna: 58g/ml/pcs,31,"Combine Sugar, Basil, then add the rest. Cook for 31 minutes.",Salad
+Salmon with Cream Sauce,Onion: 31g/ml/pcs; Can of Tuna: 68g/ml/pcs; Basil: 38g/ml/pcs; Butter: 32g/ml/pcs; Zucchini: 9g/ml/pcs; Mayonnaise: 116g/ml/pcs,11,"Combine Onion, Can of Tuna, then add the rest. Cook for 11 minutes.",Snack
+Pasta Primavera,Salt: 6g/ml/pcs; Milk: 27g/ml/pcs; Salmon Fillet: 13g/ml/pcs; Pasta: 132g/ml/pcs; Rice: 70g/ml/pcs,38,"Combine Salt, Milk, then add the rest. Cook for 38 minutes.",Appetizer
+Rice and Beans Bowl,Yogurt: 183g/ml/pcs; Tomatoes: 96g/ml/pcs; Olive Oil: 185g/ml/pcs,19,"Combine Yogurt, Tomatoes, then add the rest. Cook for 19 minutes.",Appetizer
+Yogurt Parfait,Sugar: 126g/ml/pcs; Garlic: 141g/ml/pcs; Ketchup: 11g/ml/pcs; Lettuce: 132g/ml/pcs; Ground Beef: 124g/ml/pcs,24,"Combine Sugar, Garlic, then add the rest. Cook for 24 minutes.",Appetizer
+Cheese Sandwich,Eggs: 126g/ml/pcs; Olive Oil: 191g/ml/pcs; Ground Beef: 34g/ml/pcs,35,"Combine Eggs, Olive Oil, then add the rest. Cook for 35 minutes.",Salad
+French Toast,Ground Beef: 167g/ml/pcs; Mustard: 57g/ml/pcs; Tomatoes: 74g/ml/pcs; Rice: 191g/ml/pcs; Yogurt: 55g/ml/pcs; Olive Oil: 130g/ml/pcs,19,"Combine Ground Beef, Mustard, then add the rest. Cook for 19 minutes.",Breakfast
+Scrambled Eggs,Butter: 194g/ml/pcs; Parmesan: 182g/ml/pcs; Basil: 53g/ml/pcs; Can of Tuna: 6g/ml/pcs; Rice: 96g/ml/pcs; Onion: 63g/ml/pcs,25,"Combine Butter, Parmesan, then add the rest. Cook for 25 minutes.",Appetizer
+Veggie Wrap,Carrots: 159g/ml/pcs; Salt: 37g/ml/pcs; Canned Beans: 126g/ml/pcs,29,"Combine Carrots, Salt, then add the rest. Cook for 29 minutes.",Salad
+Tuna Melt,Mustard: 71g/ml/pcs; Rice: 109g/ml/pcs; Flour: 71g/ml/pcs; Salt: 168g/ml/pcs,36,"Combine Mustard, Rice, then add the rest. Cook for 36 minutes.",Appetizer
+Potato Frittata,Bread: 124g/ml/pcs; Salmon Fillet: 162g/ml/pcs; Yogurt: 101g/ml/pcs; Salt: 176g/ml/pcs; Milk: 119g/ml/pcs; Parmesan: 152g/ml/pcs,40,"Combine Bread, Salmon Fillet, then add the rest. Cook for 40 minutes.",Salad
+Pasta with Garlic Oil,Flour: 27g/ml/pcs; Basil: 156g/ml/pcs; Cheddar Cheese: 195g/ml/pcs; Black Pepper: 36g/ml/pcs,22,"Combine Flour, Basil, then add the rest. Cook for 22 minutes.",Soup
+Zucchini Noodles,Black Pepper: 35g/ml/pcs; Chicken Breast: 124g/ml/pcs; Sugar: 35g/ml/pcs; Basil: 156g/ml/pcs; Zucchini: 14g/ml/pcs,32,"Combine Black Pepper, Chicken Breast, then add the rest. Cook for 32 minutes.",Appetizer
+Chicken Fried Rice,Ground Beef: 40g/ml/pcs; Parmesan: 182g/ml/pcs; Yogurt: 160g/ml/pcs; Cream: 24g/ml/pcs; Rice: 42g/ml/pcs,18,"Combine Ground Beef, Parmesan, then add the rest. Cook for 18 minutes.",Side Dish
+Beef Tacos,Milk: 188g/ml/pcs; Mayonnaise: 89g/ml/pcs; Eggs: 88g/ml/pcs; Pasta: 107g/ml/pcs; Rice: 21g/ml/pcs,31,"Combine Milk, Mayonnaise, then add the rest. Cook for 31 minutes.",Soup
+Tomato Pasta,Chicken Breast: 98g/ml/pcs; Carrots: 80g/ml/pcs; Salmon Fillet: 135g/ml/pcs,26,"Combine Chicken Breast, Carrots, then add the rest. Cook for 26 minutes.",Salad
+Creamy Carrot Soup,Eggs: 26g/ml/pcs; Tomatoes: 89g/ml/pcs; Olive Oil: 196g/ml/pcs; Potatoes: 115g/ml/pcs; Pasta: 76g/ml/pcs,31,"Combine Eggs, Tomatoes, then add the rest. Cook for 31 minutes.",Main Course
+Bread Pudding,Rice: 138g/ml/pcs; Canned Beans: 7g/ml/pcs; Milk: 48g/ml/pcs,34,"Combine Rice, Canned Beans, then add the rest. Cook for 34 minutes.",Appetizer
+Egg Fried Rice,Garlic: 193g/ml/pcs; Tomatoes: 8g/ml/pcs; Lettuce: 16g/ml/pcs; Potatoes: 118g/ml/pcs; Milk: 91g/ml/pcs; Cheddar Cheese: 154g/ml/pcs,24,"Combine Garlic, Tomatoes, then add the rest. Cook for 24 minutes.",Soup
+Salmon Rice Bowl,Chicken Breast: 172g/ml/pcs; Salt: 144g/ml/pcs; Zucchini: 149g/ml/pcs,31,"Combine Chicken Breast, Salt, then add the rest. Cook for 31 minutes.",Salad
+Basil Chicken,Mayonnaise: 36g/ml/pcs; Canned Beans: 45g/ml/pcs; Ground Beef: 12g/ml/pcs; Carrots: 46g/ml/pcs; Cheddar Cheese: 55g/ml/pcs,12,"Combine Mayonnaise, Canned Beans, then add the rest. Cook for 12 minutes.",Appetizer
+Oven Roasted Potatoes,Carrots: 2g/ml/pcs; Garlic: 52g/ml/pcs; Flour: 167g/ml/pcs; Butter: 57g/ml/pcs,15,"Combine Carrots, Garlic, then add the rest. Cook for 15 minutes.",Main Course
+Baked Parmesan Zucchini,Butter: 57g/ml/pcs; Mustard: 121g/ml/pcs; Pasta: 104g/ml/pcs,37,"Combine Butter, Mustard, then add the rest. Cook for 37 minutes.",Snack
+Garlic Bread,Can of Tuna: 104g/ml/pcs; Butter: 90g/ml/pcs; Salmon Fillet: 137g/ml/pcs,12,"Combine Can of Tuna, Butter, then add the rest. Cook for 12 minutes.",Snack
+Pasta Bake,Salt: 65g/ml/pcs; Ground Beef: 91g/ml/pcs; Zucchini: 6g/ml/pcs; Butter: 147g/ml/pcs,22,"Combine Salt, Ground Beef, then add the rest. Cook for 22 minutes.",Main Course
+Egg Salad,Ketchup: 112g/ml/pcs; Potatoes: 57g/ml/pcs; Eggs: 140g/ml/pcs; Can of Tuna: 98g/ml/pcs; Parmesan: 118g/ml/pcs,13,"Combine Ketchup, Potatoes, then add the rest. Cook for 13 minutes.",Snack
+Vegetable Soup,Chicken Breast: 71g/ml/pcs; Salmon Fillet: 18g/ml/pcs; Onion: 24g/ml/pcs; Yogurt: 55g/ml/pcs; Salt: 23g/ml/pcs,30,"Combine Chicken Breast, Salmon Fillet, then add the rest. Cook for 30 minutes.",Side Dish
+Grilled Cheese,Tomatoes: 144g/ml/pcs; Olive Oil: 79g/ml/pcs; Salmon Fillet: 46g/ml/pcs; Onion: 176g/ml/pcs,20,"Combine Tomatoes, Olive Oil, then add the rest. Cook for 20 minutes.",Side Dish
+Spaghetti with Tuna,Mustard: 123g/ml/pcs; Cheddar Cheese: 103g/ml/pcs; Can of Tuna: 196g/ml/pcs,27,"Combine Mustard, Cheddar Cheese, then add the rest. Cook for 27 minutes.",Salad
+Creamy Egg Toast,Onion: 11g/ml/pcs; Rice: 185g/ml/pcs; Salt: 35g/ml/pcs,17,"Combine Onion, Rice, then add the rest. Cook for 17 minutes.",Breakfast
+Pan-Seared Chicken,Chicken Breast: 25g/ml/pcs; Tomatoes: 107g/ml/pcs; Bread: 171g/ml/pcs; Lettuce: 162g/ml/pcs; Flour: 64g/ml/pcs,31,"Combine Chicken Breast, Tomatoes, then add the rest. Cook for 31 minutes.",Snack
+Omelette with Basil,Tomatoes: 129g/ml/pcs; Butter: 133g/ml/pcs; Basil: 179g/ml/pcs; Ground Beef: 78g/ml/pcs,24,"Combine Tomatoes, Butter, then add the rest. Cook for 24 minutes.",Side Dish
+Tuna and Rice,Milk: 131g/ml/pcs; Garlic: 72g/ml/pcs; Pasta: 48g/ml/pcs,32,"Combine Milk, Garlic, then add the rest. Cook for 32 minutes.",Appetizer
+Chili Beans,Can of Tuna: 189g/ml/pcs; Basil: 43g/ml/pcs; Salmon Fillet: 139g/ml/pcs; Zucchini: 179g/ml/pcs; Rice: 21g/ml/pcs,33,"Combine Can of Tuna, Basil, then add the rest. Cook for 33 minutes.",Side Dish
+Zucchini Frittata,Canned Beans: 62g/ml/pcs; Yogurt: 132g/ml/pcs; Cheddar Cheese: 170g/ml/pcs; Bread: 118g/ml/pcs; Eggs: 77g/ml/pcs,39,"Combine Canned Beans, Yogurt, then add the rest. Cook for 39 minutes.",Appetizer
+Pasta Alfredo,Chicken Breast: 109g/ml/pcs; Black Pepper: 142g/ml/pcs; Salt: 113g/ml/pcs; Salmon Fillet: 7g/ml/pcs; Ketchup: 38g/ml/pcs; Mayonnaise: 89g/ml/pcs,17,"Combine Chicken Breast, Black Pepper, then add the rest. Cook for 17 minutes.",Salad
+Beef and Rice,Tomatoes: 17g/ml/pcs; Milk: 19g/ml/pcs; Mustard: 51g/ml/pcs,38,"Combine Tomatoes, Milk, then add the rest. Cook for 38 minutes.",Side Dish
+Simple Tomato Rice,Ketchup: 32g/ml/pcs; Zucchini: 46g/ml/pcs; Mustard: 48g/ml/pcs; Milk: 144g/ml/pcs; Carrots: 188g/ml/pcs,34,"Combine Ketchup, Zucchini, then add the rest. Cook for 34 minutes.",Side Dish
+Fried Potatoes,Can of Tuna: 36g/ml/pcs; Yogurt: 74g/ml/pcs; Olive Oil: 92g/ml/pcs; Ground Beef: 98g/ml/pcs,14,"Combine Can of Tuna, Yogurt, then add the rest. Cook for 14 minutes.",Snack
+Yogurt Dip,Cream: 174g/ml/pcs; Garlic: 102g/ml/pcs; Canned Beans: 176g/ml/pcs; Parmesan: 113g/ml/pcs; Rice: 143g/ml/pcs,27,"Combine Cream, Garlic, then add the rest. Cook for 27 minutes.",Side Dish
+Mashed Carrots,Basil: 102g/ml/pcs; Cream: 154g/ml/pcs; Tomatoes: 90g/ml/pcs,37,"Combine Basil, Cream, then add the rest. Cook for 37 minutes.",Soup
+Steamed Zucchini,Flour: 139g/ml/pcs; Mayonnaise: 27g/ml/pcs; Sugar: 69g/ml/pcs,13,"Combine Flour, Mayonnaise, then add the rest. Cook for 13 minutes.",Snack
+Grilled Salmon,Mustard: 119g/ml/pcs; Olive Oil: 180g/ml/pcs; Butter: 61g/ml/pcs; Mayonnaise: 27g/ml/pcs; Ground Beef: 107g/ml/pcs; Rice: 68g/ml/pcs,40,"Combine Mustard, Olive Oil, then add the rest. Cook for 40 minutes.",Appetizer
+Stuffed Tomatoes,Can of Tuna: 72g/ml/pcs; Mustard: 37g/ml/pcs; Milk: 37g/ml/pcs; Salt: 128g/ml/pcs,34,"Combine Can of Tuna, Mustard, then add the rest. Cook for 34 minutes.",Appetizer
+Eggplant Stir Fry,Yogurt: 164g/ml/pcs; Butter: 50g/ml/pcs; Ground Beef: 104g/ml/pcs; Carrots: 182g/ml/pcs; Salmon Fillet: 24g/ml/pcs; Ketchup: 19g/ml/pcs,21,"Combine Yogurt, Butter, then add the rest. Cook for 21 minutes.",Salad
+Rice Pudding,Chicken Breast: 4g/ml/pcs; Potatoes: 107g/ml/pcs; Parmesan: 168g/ml/pcs; Ketchup: 51g/ml/pcs; Yogurt: 130g/ml/pcs,14,"Combine Chicken Breast, Potatoes, then add the rest. Cook for 14 minutes.",Snack
+Tuna Patties,Milk: 84g/ml/pcs; Onion: 42g/ml/pcs; Parmesan: 196g/ml/pcs; Eggs: 183g/ml/pcs,10,"Combine Milk, Onion, then add the rest. Cook for 10 minutes.",Side Dish
+Bread and Butter,Zucchini: 36g/ml/pcs; Basil: 11g/ml/pcs; Lettuce: 116g/ml/pcs; Parmesan: 148g/ml/pcs; Cream: 192g/ml/pcs,19,"Combine Zucchini, Basil, then add the rest. Cook for 19 minutes.",Side Dish
+Frittata with Onions,Olive Oil: 188g/ml/pcs; Milk: 7g/ml/pcs; Carrots: 106g/ml/pcs; Chicken Breast: 27g/ml/pcs; Yogurt: 69g/ml/pcs,13,"Combine Olive Oil, Milk, then add the rest. Cook for 13 minutes.",Appetizer
+Garlic Chicken,Canned Beans: 163g/ml/pcs; Sugar: 154g/ml/pcs; Lettuce: 141g/ml/pcs; Onion: 178g/ml/pcs; Garlic: 192g/ml/pcs; Rice: 133g/ml/pcs,12,"Combine Canned Beans, Sugar, then add the rest. Cook for 12 minutes.",Side Dish
+Tomato Egg Rice,Butter: 145g/ml/pcs; Pasta: 90g/ml/pcs; Mustard: 168g/ml/pcs; Garlic: 186g/ml/pcs; Olive Oil: 157g/ml/pcs; Cheddar Cheese: 3g/ml/pcs,12,"Combine Butter, Pasta, then add the rest. Cook for 12 minutes.",Salad
+Mustard Chicken,Basil: 48g/ml/pcs; Lettuce: 98g/ml/pcs; Milk: 182g/ml/pcs; Black Pepper: 2g/ml/pcs; Onion: 156g/ml/pcs; Ground Beef: 141g/ml/pcs,11,"Combine Basil, Lettuce, then add the rest. Cook for 11 minutes.",Breakfast
