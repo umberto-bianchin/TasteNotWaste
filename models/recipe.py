@@ -3,6 +3,7 @@ from enum import Enum
 from typing import List
 from .ingredient import Ingredient
 
+
 class DishType(Enum):
     APPETIZER = "Appetizer"
     MAIN_COURSE = "Main Course"
@@ -13,54 +14,22 @@ class DishType(Enum):
     BEVERAGE = "Beverage"
     OTHER = "Other"
 
-@dataclass
-class RecipeIngredient:
-    """Pairs an Ingredient with a required quantity for a recipe."""
-    def __init__(self, ingredient: Ingredient, quantity: float):
-        self.ingredient = ingredient
-        self.quantity = quantity
-
-    def __repr__(self):
-        return (
-            f"Recipe Ingredient:\n"
-            f"  - {self.quantity} {self.ingredient.unit} of {self.ingredient.name}"
-            f" (Expires: {self.ingredient.expiration_date.isoformat()}"
-            + (
-                f", Opened on: {self.ingredient.open_date.isoformat()},"
-                f" +{self.ingredient.max_days_after_open}d shelf-life"
-                if self.ingredient.open_date and self.ingredient.max_days_after_open is not None
-                else ""
-              )
-            + ")"
-        )
 
 @dataclass
 class Recipe:
-    def __init__(
-        self,
-        name: str,
-        ingredients: List[RecipeIngredient],
-        preparation_time_minutes: int,
-        description: str,
-        dish_type: DishType
-    ):
-        self.name = name
-        self.ingredients = ingredients
-        self.preparation_time_minutes = preparation_time_minutes
-        self.description = description
-        self.dish_type = dish_type
-
-    def add_ingredient(self, ingredient: Ingredient, quantity: float):
-        """Convenience method to append an ingredient."""
-        self.ingredients.append(RecipeIngredient(ingredient, quantity))
+    name: str
+    dish_type: DishType
+    ingredients: List[Ingredient]
+    prep_time: int
+    description: str
 
     def __repr__(self):
         ing_lines = "\n".join(
-            f"  - {ing.quantity} {ing.ingredient.unit} {ing.ingredient.name}" for ing in self.ingredients
+            f"  - {ing.name} {ing.amount} {ing.unit}" for ing in self.ingredients
         )
         return (
             f"{self.name} ({self.dish_type.value})\n"
-            f"Prep time: {self.preparation_time_minutes} minutes\n"
+            f"Prep time: {self.prep_time} minutes\n"
+            f"Ingredients:\n{ing_lines}\n"
             f"{self.description}\n"
-            f"Ingredients:\n{ing_lines}"
         )

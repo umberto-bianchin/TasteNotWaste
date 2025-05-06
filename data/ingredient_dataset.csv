@@ -1,32 +1,32 @@
-name,quantity,expiration_date,opened_date,max_days_after_open
-Milk,500ml,2025-05-08,2025-05-03,5
-Eggs,6pcs,2025-05-15,,
-Butter,200g,2025-06-01,2025-04-28,14
-Cheddar Cheese,150g,2025-05-25,2025-04-27,10
-Yogurt,2pcs,2025-05-10,2025-05-04,5
-Tomatoes,3pcs,2025-05-07,,
-Lettuce,1head,2025-05-06,,
-Onion,2pcs,2025-05-20,,
-Garlic,5cloves,2025-07-01,,
-Olive Oil,250ml,2026-01-01,2024-12-01,180
-Can of Tuna,1can,2026-06-30,2025-04-20,2
-Pasta,500g,2026-02-01,,
-Rice,1kg,2026-03-15,,
-Flour,1kg,2026-04-01,,
-Sugar,500g,2026-08-01,,
-Salt,250g,2027-01-01,,
-Black Pepper,50g,2027-03-01,,
-Basil,10g,2025-08-01,,
-Canned Beans,1can,2026-05-01,,
-Bread,1loaf,2025-05-06,2025-05-03,3
-Chicken Breast,300g,2025-05-06,2025-05-04,2
-Ground Beef,400g,2025-05-06,2025-05-03,1
-Salmon Fillet,200g,2025-05-05,2025-05-04,1
-Cream,200ml,2025-05-09,2025-05-04,5
-Carrots,4pcs,2025-05-12,,
-Potatoes,5pcs,2025-05-25,,
-Zucchini,2pcs,2025-05-10,,
-Parmesan,50g,2025-06-10,2025-04-25,15
-Ketchup,150ml,2025-12-01,2025-03-01,90
-Mustard,100ml,2025-11-01,2025-02-15,90
-Mayonnaise,100ml,2025-10-01,2025-04-01,30
+name,expiration_date,opened_date,max_days_after_open,amount,unit
+Milk,2025-05-08,2025-05-03,5,500,ml
+Eggs,2025-05-15,,0,6,pcs
+Butter,2025-06-01,2025-04-28,14,200,g
+Cheddar Cheese,2025-05-25,2025-04-27,10,150,g
+Yogurt,2025-05-10,2025-05-04,5,2,ml
+Tomatoes,2025-05-07,,0,3,pcs
+Lettuce,2025-05-06,,0,1,g
+Onion,2025-05-20,,0,2,pcs
+Garlic,2025-07-01,,0,5,cloves
+Olive Oil,2026-01-01,2024-12-01,180,250,g
+Can of Tuna,2026-06-30,2025-04-20,2,1,can
+Pasta,2026-02-01,,0,500,g
+Rice,2026-03-15,,0,1,g
+Flour,2026-04-01,,0,1,g
+Sugar,2026-08-01,,0,500,g
+Salt,2027-01-01,,0,250,g
+Black Pepper,2027-03-01,,0,50,g
+Basil,2025-08-01,,0,10,g
+Canned Beans,2026-05-01,,0,1,g
+Bread,2025-05-06,2025-05-03,3,1,g
+Chicken Breast,2025-05-06,2025-05-04,2,300,g
+Ground Beef,2025-05-06,2025-05-03,1,400,g
+Salmon Fillet,2025-05-05,2025-05-04,1,200,g
+Cream,2025-05-09,2025-05-04,5,200,g
+Carrots,2025-05-12,,0,4,pcs
+Potatoes,2025-05-25,,0,5,pcs
+Zucchini,2025-05-10,,0,2,pcs
+Parmesan,2025-06-10,2025-04-25,15,50,g
+Ketchup,2025-12-01,2025-03-01,90,150,g
+Mustard,2025-11-01,2025-02-15,90,100,g
+Mayonnaise,2025-10-01,2025-04-01,30,100,g
