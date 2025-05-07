@@ -45,7 +45,7 @@ def parse_recipes(r):
     recipe_list = [
         Recipe(
             name=row["name"],
-            dish_type=DishType(row["dish_type"]),
+            dish_type=DishType(row["dish_type"]) if row["dish_type"] in DishType._value2member_map_ else DishType.OTHER,
             ingredients=parse_ingredient_string(row["ingredients"]),
             prep_time=int(row["prep_time_minutes"]),
             description=row["description"]
