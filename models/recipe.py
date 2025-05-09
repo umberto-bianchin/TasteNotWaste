@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import List
 from .ingredient import Ingredient
+import copy
 
 
 class DishType(Enum):
@@ -24,6 +25,29 @@ class Recipe:
     ingredients: List[Ingredient]
     prep_time: int
     description: str
+
+    def scaled_portions(self, portions):
+        r = copy.deepcopy(self)
+        for i in self.ingredients:
+            i.amount *= portions
+        return r
+
+    def takes_less_than(self, max_prep_time):
+        return self.prep_time <= max_prep_time
+
+    def contains_none_of(self, unwanted_ingredients):
+        unwanted_names = {i.name for i in unwanted_ingredients}
+        return not any(
+            i.name in unwanted_names
+            for i in self.ingredients
+        )
+
+    def all_available(self, pantry):
+        pantry_dict = {p.name: p.amount for p in pantry}
+        return all(
+            pantry_dict.get(i.name, 0) >= i.amount
+            for i in self.ingredients
+        )
 
     def __repr__(self):
         ing_lines = "\n".join(

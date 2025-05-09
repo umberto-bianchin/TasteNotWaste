@@ -7,7 +7,7 @@ EXPIRY_THRESHOLD = 10
 PREFERENCE_BONUS = 4
 k = 0.3
 
-def score_recipe(recipe, pantry, preferred_ingredients):
+def compute_score(recipe, pantry, preferred_ingredients):
     score = 0
     for ingredient in recipe.ingredients:
         pantry_item = pantry.get(ingredient.name)
