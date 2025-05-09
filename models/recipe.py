@@ -27,9 +27,10 @@ class Recipe:
     description: str
 
     def scaled_portions(self, portions):
-        r = copy.deepcopy(self)
-        for i in self.ingredients:
+        r = copy.deepcopy(self)  
+        for i in r.ingredients:
             i.amount *= portions
+        
         return r
 
     def takes_less_than(self, max_prep_time):

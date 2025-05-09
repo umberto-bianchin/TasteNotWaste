@@ -22,4 +22,4 @@ def compute_score(recipe, pantry, preferred_ingredients):
             score += bonus
         else:
             score -= PANTRY_MALUS
-    return score
+    return f"{score:.3f}"
