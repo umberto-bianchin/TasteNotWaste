@@ -43,7 +43,7 @@ class Recipe:
         )
 
     def all_available(self, pantry):
-        pantry_dict = {p.name: p.amount for p in pantry}
+        pantry_dict = {p.ing.name: p.ing.amount for p in pantry}
         return all(
             pantry_dict.get(i.name, 0) >= i.amount
             for i in self.ingredients

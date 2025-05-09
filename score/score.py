@@ -9,15 +9,16 @@ k = 0.3
 
 def compute_score(recipe, pantry, preferred_ingredients):
     score = 0
+    pantry_dict = {p.ing.name: p for p in pantry}
     for ingredient in recipe.ingredients:
-        pantry_item = pantry.get(ingredient.name)
+        pantry_item = pantry_dict.get(ingredient.name)
         if ingredient.name in preferred_ingredients:
             score += PREFERENCE_BONUS
         if pantry_item:
-            quantity_ratio = min(pantry_item.quantity / ingredient.required_quantity, 1)
+            quantity_ratio = min(pantry_item.ing.amount / ingredient.amount, 1)
             bonus = PANTRY_BONUS * quantity_ratio
-            if pantry_item.days_to_expiry <= EXPIRY_THRESHOLD:
-                bonus += EXPIRY_BONUS * math.exp(-k * pantry_item.days_to_expiry)
+            if EXPIRY_THRESHOLD >= pantry_item.days_to_expiry():
+                bonus += EXPIRY_BONUS * math.exp(-k * pantry_item.days_to_expiry())
             score += bonus
         else:
             score -= PANTRY_MALUS

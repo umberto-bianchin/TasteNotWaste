@@ -10,12 +10,26 @@ class PantryIngredient:
     opened_date: date = None
     max_days_after_open: int = None
 
+    def days_to_expiry(self) -> int:
+        """Returns the number of days left before expiry, considering opened state if applicable."""
+        today = date.today()
+
+        if self.opened_date and self.max_days_after_open is not None:
+            effective_expiry = self.opened_date + timedelta(days=self.max_days_after_open)
+        else:
+            effective_expiry = self.expiration_date
+
+        days_left = (effective_expiry - today).days
+        return max(days_left, 0)  # Never return negative days, minimum is 0
+
     def is_expired(self) -> bool:
         today = date.today()
         if self.opened_date and self.max_days_after_open:
             open_expiration = self.opened_date + timedelta(days=self.max_days_after_open)
             return today > open_expiration or today > self.expiration_date
         return today > self.expiration_date
+
+
 
     def __repr__(self):
         lines = [

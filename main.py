@@ -16,12 +16,12 @@ def best_recipes(pantry, recipes, preferred_ingredients, unwanted_ingredients, a
         # Check if the recipe is valid:
         # - It meets the maximum preparation time constraint
         # - It does not contain unwanted ingredients
-        valid = r.takes_less_than(max_prep_time) and r.contains_none_of(unwanted_ingredients, False)
+        valid = r.takes_less_than(max_prep_time) and r.contains_none_of(unwanted_ingredients)
 
         # If the "available_only" flag is set (user doesn't want to buy missing ingredients),
         # filter further to ensure all ingredients are available in the pantry
         if available_only:
-            valid = r.all_available(pantry, True)
+            valid = r.all_available(pantry)
 
         # If the recipe passed all validation criteria, calculate its final score
         if valid:
@@ -32,7 +32,7 @@ def best_recipes(pantry, recipes, preferred_ingredients, unwanted_ingredients, a
             score = compute_score(r, pantry, preferred_ingredients)
             scores[r.name] = score
 
-    sort_scores(scores)
+    #sort_scores(scores)
     return scores
 
 
