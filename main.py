@@ -1,48 +1,21 @@
-from collections import OrderedDict
-from tabulate import tabulate
-
+import streamlit as st
+from score.score import best_recipes
 from helper.csv_parser import parse_csv
-from score.score import compute_score
 
+myPantry, myRecipes = parse_csv()
 
-def best_recipes(pantry, recipes, preferred_ingredients, unwanted_ingredients, available_only, portions, max_prep_time):
-    # Dictionary to store the score associated with each recipe name
-    scores = {}
-    for r in recipes:
-        score = 0
+# UI
+st.set_page_config(page_title="TasteNotWaste", page_icon="🍽️")
+st.title("TasteNotWaste")
+st.write("Welcome! Use the left menu to explore all functionalities.")
 
-        # Check if the recipe is valid:
-        # - It meets the maximum preparation time constraint
-        # - It does not contain unwanted ingredients
-        valid = r.takes_less_than(max_prep_time) and r.contains_none_of(unwanted_ingredients)
+portions = st.slider("Number of portions", 1, 10, 2)
+buyIng = st.checkbox("Buy ingredients")
+max_time = st.slider("Max prep time (min)", 5, 60, 30)
+unwantedIng = st.multiselect("Allergies", myPantry)
 
-        # Adjust the recipe quantities based on the number of requested portions
-        r = r.scaled_portions(portions)
-        
-        # If the "available_only" flag is set (user doesn't want to buy missing ingredients),
-        # filter further to ensure all ingredients are available in the pantry
-        if available_only:
-            valid = r.all_available(pantry)
-
-        # If the recipe passed all validation criteria, calculate its final score
-        if valid:
-            # Compute and store the score
-            score = compute_score(r, pantry, preferred_ingredients)
-            scores[r.name] = score
-
-    scores_sorted = OrderedDict(sorted(scores.items(), key=lambda item: item[1], reverse=True))
-    return scores_sorted
-
-
-if __name__ == "__main__":
-    myPantry, myRecipes = parse_csv()
-    
-    best = best_recipes(myPantry, myRecipes, [], [], True, 1, 30)
-
-    table = [
-        (i, name, score)
-        for i, (name, score) in enumerate(best.items(), 1)
-    ]
-    print(tabulate(table,
-                   headers=["Rank", "Recipe", "Score"],
-                   tablefmt="github"))
+if st.button("Suggest recipes"):
+    best = best_recipes(myPantry, myRecipes, [], [], buyIng, portions, max_time)
+    st.image("1.jpg")
+    for name, score in best.items():
+        st.write(f" {name} — Score: {score:.2f}")
