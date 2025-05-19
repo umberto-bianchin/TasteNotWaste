@@ -23,3 +23,28 @@ def compute_score(recipe, pantry, preferred_ingredients):
         else:
             score -= PANTRY_MALUS
     return f"{score:.3f}"
+
+def best_recipes(pantry, recipes, preferred_ingredients, unwanted_ingredients, available_only, portions, max_prep_time):
+    # Dictionary to store the score associated with each recipe name
+    scores = {}
+    for r in recipes:
+        # Check if the recipe is valid:
+        # - It meets the maximum preparation time constraint
+        # - It does not contain unwanted ingredients
+        valid = r.takes_less_than(max_prep_time) and r.contains_none_of(unwanted_ingredients)
+
+        # Adjust the recipe quantities based on the number of requested portions
+        r_scaled = r.scaled_portions(portions)
+
+        # If the "available_only" flag is set (user doesn't want to buy missing ingredients),
+        # filter further to ensure all ingredients are available in the pantry
+        if available_only:
+            valid = r_scaled.all_available(pantry)
+
+        # If the recipe passed all validation criteria, calculate its final score
+        if valid:
+            # Compute and store the score
+            scores[r_scaled.name] = compute_score(r_scaled, pantry, preferred_ingredients)
+
+    #sort_scores(scores)
+    return scores
