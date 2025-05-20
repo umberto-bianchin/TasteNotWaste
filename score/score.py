@@ -1,4 +1,5 @@
 import math
+from collections import OrderedDict
 
 EXPIRY_BONUS = 20
 PANTRY_BONUS = 2
@@ -46,5 +47,5 @@ def best_recipes(pantry, recipes, preferred_ingredients, unwanted_ingredients, a
             # Compute and store the score
             scores[r_scaled.name] = compute_score(r_scaled, pantry, preferred_ingredients)
 
-    #sort_scores(scores)
-    return scores
+    scores_sorted = OrderedDict(sorted(scores.items(), key=lambda item: item[1], reverse=True))
+    return scores_sorted

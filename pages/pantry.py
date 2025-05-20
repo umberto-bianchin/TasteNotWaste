@@ -4,16 +4,19 @@ from helper.csv_parser import parse_csv
 st.set_page_config(page_title="Pantry", page_icon="📦")
 st.title("📦 Your Pantry")
 
-# Upload CSV
-try:
-    pantry, _ = parse_csv()
-    st.session_state["pantry"] = pantry
-    st.success(f"✅ {len(pantry)} ingredients in your pantry.")
-except Exception as e:
-    st.error(f"❌ Error loading pantry: {e}")
-    pantry = []
+pantry = st.session_state["pantry"]
+
+if not pantry:
+    # Upload CSV
+    try:
+        pantry, _ = parse_csv()
+        st.session_state["pantry"] = pantry
+    except Exception as e:
+        st.error(f"❌ Error loading pantry: {e}")
+        pantry = []
 
 if pantry:
+    st.success(f"✅ {len(pantry)} ingredients in your pantry.")
     for item in pantry:
         ing = item.ing
         days_left = item.days_to_expiry() if hasattr(item, "days_to_expiry") else "-"
