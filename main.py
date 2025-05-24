@@ -22,12 +22,12 @@ buyIng = st.checkbox("Buy ingredients")
 unwantedIngName = st.multiselect("Allergies", ingredientsName)
 preferredIngName = st.multiselect("Favourite Ingredients", ingredientsName)
 
-unwantedIng = [ing_map[n] for n in unwantedIngName]
-preferredIng = [ing_map[n] for n in preferredIngName]
-
 rank_emojis = ["🥇", "🥈", "🥉"] + ["🏅"] * 7
 
 if st.button("Suggest recipes"):
+    unwantedIng = [ing_map[n] for n in unwantedIngName]
+    preferredIng = [ing_map[n] for n in preferredIngName]
+
     best = best_recipes(myPantry, myRecipes, preferredIng, unwantedIng, buyIng, portions, max_time)
     st.markdown(f"""## Best recipes""")
     if not best:
