@@ -41,11 +41,15 @@ if st.button("Suggest recipes"):
                 {emoji} {recipe.name}
             </div>
             <div style='font-size:14px; color:gray; margin-bottom:0.5em'>
-                Score: {score}
+                Score: {score:.3f}
             </div>
             """, unsafe_allow_html=True)
 
-            with st.expander("*Show details*"):
+            ingToBuy, ingExpiring = calc_stats(myPantry, recipe)
+            label = f"**{ingExpiring}** ingredient about to expire" if ingExpiring == 1 else f"**{ingExpiring}** ingredients about to expire"
+            label += f" and **{ingToBuy}** to buy!" if buyIng else f"!"
+
+            with st.expander(label):
                 st.markdown("📝 ***Ingredients:***")
                 for ing in recipe.ingredients:
                     st.markdown(f"&nbsp;&nbsp;&nbsp;&nbsp;• {ing.name}: {ing.amount} {ing.unit}",
