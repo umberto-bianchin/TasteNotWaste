@@ -30,7 +30,6 @@ class PantryIngredient:
         return today > self.expiration_date
 
 
-
     def __repr__(self):
         lines = [
             f"Ingredient:",

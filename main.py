@@ -1,6 +1,8 @@
 import streamlit as st
-from score.score import best_recipes
-from helper.csv_parser import parse_csv
+from score.score import best_recipes, calc_stats
+from helper.csv_parser import parse_csv, update_expiration
+
+#update_expiration()
 
 # Retrieve csv data
 myPantry, myRecipes = parse_csv()
@@ -8,6 +10,11 @@ st.session_state["pantry"] = myPantry
 st.session_state["recipes"] = myRecipes
 
 ing_map = {p.ing.name: p.ing for p in myPantry}
+for r in myRecipes:
+    for ing in r.ingredients:
+        if ing.name not in ing_map:
+            ing_map[ing.name] = ing
+
 
 # UI
 st.set_page_config(page_title="TasteNotWaste", page_icon="🍽️")
@@ -28,7 +35,7 @@ if st.button("Suggest recipes"):
     unwantedIng = [ing_map[n] for n in unwantedIngName]
     preferredIng = [ing_map[n] for n in preferredIngName]
 
-    best = best_recipes(myPantry, myRecipes, preferredIng, unwantedIng, buyIng, portions, max_time)
+    best = best_recipes(myPantry, myRecipes, preferredIng, unwantedIng, not buyIng, portions, max_time)
     st.markdown(f"""## Best recipes""")
     if not best:
         st.warning("❌ No recipes found with the filters selected.")

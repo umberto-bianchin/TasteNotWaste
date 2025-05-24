@@ -8,12 +8,14 @@ EXPIRY_THRESHOLD = 10
 PREFERENCE_BONUS = 4
 k = 0.3
 
+
 def compute_score(recipe, pantry, preferred_ingredients):
     score = 0
     pantry_dict = {p.ing.name: p for p in pantry}
+    preferred_names = {i.name for i in preferred_ingredients}
     for ingredient in recipe.ingredients:
         pantry_item = pantry_dict.get(ingredient.name)
-        if ingredient.name in preferred_ingredients:
+        if ingredient.name in preferred_names:
             score += PREFERENCE_BONUS
         if pantry_item:
             quantity_ratio = min(pantry_item.ing.amount / ingredient.amount, 1)
@@ -23,7 +25,8 @@ def compute_score(recipe, pantry, preferred_ingredients):
             score += bonus
         else:
             score -= PANTRY_MALUS
-    return f"{score:.3f}"
+    return score
+
 
 def best_recipes(pantry, recipes, preferred_ingredients, unwanted_ingredients, available_only, portions, max_prep_time):
     # Dictionary to store the score associated with each recipe name
@@ -49,3 +52,18 @@ def best_recipes(pantry, recipes, preferred_ingredients, unwanted_ingredients, a
 
     scores_sorted = OrderedDict(sorted(scores.items(), key=lambda item: item[1], reverse=True))
     return scores_sorted
+
+
+def calc_stats(pantry, recipe):
+    pantry_dict = {p.ing.name: p for p in pantry}
+
+    ingToBuy = 0
+    ingExpiring = 0
+    for ingredient in recipe.ingredients:
+        pantry_item = pantry_dict.get(ingredient.name)
+        if pantry_item.days_to_expiry() <= EXPIRY_THRESHOLD:
+            ingExpiring += 1
+        if pantry_item.ing.amount < ingredient.amount:
+            ingToBuy += 1
+
+    return ingToBuy, ingExpiring
