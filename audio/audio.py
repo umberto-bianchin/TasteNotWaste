@@ -61,3 +61,4 @@ def resolve_ingredient_name(name, ing_map):
     if name.endswith("s") and name[:-1] in ing_map:
         return ing_map[name[:-1]]
     raise ValueError(name)
+    
