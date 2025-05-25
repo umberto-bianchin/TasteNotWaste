@@ -91,10 +91,38 @@ if st.button("🎤 Voice Command"):
         st.success(f"✅ You said: *{text}*")
 
         filters = extract_filters(text, ingredientsName)
-        st.info(f"📌 Using filters: {filters['portions']} portions, {filters['max_time']} minutes, {filters['preferred']} preferred, {filters['unwanted']} unwanted")
 
-        preferredIng = [resolve_ingredient_name(n, ing_map) for n in filters['preferred']]
-        unwantedIng = [resolve_ingredient_name(n, ing_map) for n in filters['unwanted']]
+        preferredIng = []
+        skipped_preferred = []
+
+        for n in filters['preferred']:
+            if resolve_ingredient_name(n, ing_map) is not None:
+                preferredIng.append(n)
+            else:
+                skipped_preferred.append(n)
+
+        unwantedIng = []
+        skipped_unwanted = []
+
+        for n in filters['unwanted']:
+            if resolve_ingredient_name(n, ing_map) is not None:
+                unwantedIng.append(n)
+            else:
+                skipped_unwanted.append(n)
+
+        info_parts = [f"{filters['portions']} portions", f"{filters['max_time']} minutes"]
+
+        if preferredIng:
+            info_parts.append(f"preferred: {', '.join(preferredIng)}")
+
+        if unwantedIng:
+            info_parts.append(f"unwanted: {', '.join(unwantedIng)}")
+
+        st.info("📌 Using filters: " + " | ".join(info_parts))
+
+        skipped = skipped_preferred + skipped_unwanted
+        if skipped:
+            st.warning(f"⚠️ Skipped ingredients: {', '.join(skipped)}, since the pantry doesn't have them")
 
         best = best_recipes(myPantry, myRecipes, preferredIng, unwantedIng, buyIng, filters['portions'], filters['max_time'])
         render_recipes(best, myRecipes, myPantry, filters['portions'], buyIng)

@@ -60,10 +60,14 @@ def calc_stats(pantry, recipe):
     ingToBuy = 0
     ingExpiring = 0
     for ingredient in recipe.ingredients:
-        pantry_item = pantry_dict.get(ingredient.name)
-        if pantry_item.days_to_expiry() <= EXPIRY_THRESHOLD:
-            ingExpiring += 1
-        if pantry_item.ing.amount < ingredient.amount:
+        pantry_item = next((p for p in pantry if p.ing.name.lower() == ingredient.name.lower()), None)
+        if pantry_item is None:
             ingToBuy += 1
+        else:
+            days = pantry_item.days_to_expiry()
+            if days is not None and days <= EXPIRY_THRESHOLD:
+                ingExpiring += 1
+            if pantry_item.ing.amount < ingredient.amount:
+                ingToBuy += 1
 
     return ingToBuy, ingExpiring

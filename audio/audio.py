@@ -60,5 +60,6 @@ def resolve_ingredient_name(name, ing_map):
         return ing_map[name[:-2]]
     if name.endswith("s") and name[:-1] in ing_map:
         return ing_map[name[:-1]]
-    raise ValueError(name)
+    print(f"[SKIPPED] Ingredient '{name}' not found in pantry.")
+    return None
     
