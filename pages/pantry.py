@@ -24,7 +24,7 @@ if pantry:
         with st.expander(label=f"""**{ing.name} ({ing.amount} {ing.unit})**""", expanded=False):
             st.markdown(f"""
                 ⚖️ Quantity: **{ing.amount} {ing.unit}**  
-                {'⚠️ ️EXPIRED!' if days_left == 0 else f"""⌛ Expires in **{days_left}** days"""}  
+                {'⚠️ ️EXPIRED!' if days_left == 0 else f"⏳ Expires in **{days_left}** days"}  
                 🗓️ Expiry: {item.expiration_date}  
                 {'🔓 Opened on: ' + item.opened_date.strftime('%Y-%m-%d') if item.opened_date else ''}                         
                 """)
