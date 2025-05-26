@@ -86,7 +86,12 @@ if st.button("Suggest recipes"):
     
 if st.button("🎤 Voice Command"):
     try:
-        audio = record_audio(duration=10)
+        with st.spinner("🎙️ Listening... Please speak clearly"):
+            status_box = st.empty()
+            status_box.info("🔴 Recording in progress...")
+            audio = record_audio(duration=10)
+            status_box.empty()
+            
         text = transcribe_audio(audio)
         st.success(f"✅ You said: *{text}*")
 

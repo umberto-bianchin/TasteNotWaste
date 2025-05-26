@@ -55,8 +55,6 @@ def best_recipes(pantry, recipes, preferred_ingredients, unwanted_ingredients, a
 
 
 def calc_stats(pantry, recipe):
-    pantry_dict = {p.ing.name: p for p in pantry}
-
     ingToBuy = 0
     ingExpiring = 0
     for ingredient in recipe.ingredients:
