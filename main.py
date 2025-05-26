@@ -77,23 +77,32 @@ preferredIngName = st.multiselect("Favourite Ingredients", ingredientsName)
 
 rank_emojis = ["🥇", "🥈", "🥉"] + ["🏅"] * 7
 
-if st.button("Suggest recipes"):
+manual_trigger = st.button("Suggest recipes")
+voice_trigger = st.button("🎤 Voice Command")
+
+feedback_container = st.container()
+results_container = st.container()
+
+if manual_trigger:
     unwantedIng = [ing_map[n] for n in unwantedIngName]
     preferredIng = [ing_map[n] for n in preferredIngName]
-
     best = best_recipes(myPantry, myRecipes, preferredIng, unwantedIng, not buyIng, portions, max_time)
-    render_recipes(best, myRecipes, myPantry, portions, buyIng)
+
+    with results_container:
+        results_container.empty()
+        render_recipes(best, myRecipes, myPantry, portions, buyIng)
     
-if st.button("🎤 Voice Command"):
+if voice_trigger:
     try:
-        with st.spinner("🎙️ Listening... Please speak clearly"):
-            status_box = st.empty()
-            status_box.info("🔴 Recording in progress...")
-            audio = record_audio(duration=10)
-            status_box.empty()
+        with feedback_container:
+            with st.spinner("🎙️ Listening... Please speak clearly"):
+                status_box = st.empty()
+                status_box.info("🔴 Recording in progress...")
+                audio = record_audio(duration=10)
+                status_box.empty()
             
-        text = transcribe_audio(audio)
-        st.success(f"✅ You said: *{text}*")
+            text = transcribe_audio(audio)
+            st.success(f"✅ You said: *{text}*")
 
         filters = extract_filters(text, ingredientsName)
 
@@ -101,8 +110,9 @@ if st.button("🎤 Voice Command"):
         skipped_preferred = []
 
         for n in filters['preferred']:
-            if resolve_ingredient_name(n, ing_map) is not None:
-                preferredIng.append(n)
+            ing_obj = resolve_ingredient_name(n, ing_map)
+            if ing_obj:
+                preferredIng.append(ing_obj)
             else:
                 skipped_preferred.append(n)
 
@@ -110,27 +120,33 @@ if st.button("🎤 Voice Command"):
         skipped_unwanted = []
 
         for n in filters['unwanted']:
-            if resolve_ingredient_name(n, ing_map) is not None:
-                unwantedIng.append(n)
+            ing_obj = resolve_ingredient_name(n, ing_map)
+            if ing_obj:
+                unwantedIng.append(ing_obj)
             else:
                 skipped_unwanted.append(n)
 
         info_parts = [f"{filters['portions']} portions", f"{filters['max_time']} minutes"]
+        info_parts.append("buy ingredients" if filters['buy'] else "avoid buying")
 
         if preferredIng:
-            info_parts.append(f"preferred: {', '.join(preferredIng)}")
+            info_parts.append(f"preferred: {', '.join(ing.name for ing in preferredIng)}")
 
         if unwantedIng:
-            info_parts.append(f"unwanted: {', '.join(unwantedIng)}")
+            info_parts.append(f"unwanted: {', '.join(ing.name for ing in unwantedIng)}")
 
-        st.info("📌 Using filters: " + " | ".join(info_parts))
+        with feedback_container:
+            st.info("📌 Using filters: " + " | ".join(info_parts))
 
-        skipped = skipped_preferred + skipped_unwanted
-        if skipped:
-            st.warning(f"⚠️ Skipped ingredients: {', '.join(skipped)}, since the pantry doesn't have them")
+            skipped = skipped_preferred + skipped_unwanted
+            if skipped:
+                st.warning(f"⚠️ Skipped ingredients: {', '.join(skipped)}, since the pantry doesn't have them")
 
-        best = best_recipes(myPantry, myRecipes, preferredIng, unwantedIng, buyIng, filters['portions'], filters['max_time'])
-        render_recipes(best, myRecipes, myPantry, filters['portions'], buyIng)
+        best = best_recipes(myPantry, myRecipes, preferredIng, unwantedIng, not filters['buy'], filters['portions'], filters['max_time'])
+
+        with results_container:
+            results_container.empty()  # Clear old content
+            render_recipes(best, myRecipes, myPantry, filters['portions'], buyIng)
 
         top_name = next(iter(best))
         top_recipe = next(r for r in myRecipes if r.name == top_name).scaled_portions(filters['portions'])

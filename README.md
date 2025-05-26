@@ -4,7 +4,7 @@ A smart AI-powered recipe recommender that helps you minimize food waste by sugg
 
 ## Authors
 
-* [@umberto-bianchin](https://www.https/github.com/umberto-bianchin)
+* [@umberto-bianchin](https://www.github.com/umberto-bianchin)
 * [@claudiadecarlo19](https://www.github.com/claudiadecarlo19)
 
 
@@ -68,8 +68,7 @@ Use the provided tool `mic_test.py` to detect and test microphones.
 5. The waveform will be plotted so you can visually confirm the mic is working.
 
 ### ✅ Set the Selected Device
-Once you identify the correct device index, update the value in your app:
-In audio.py
+Once you identify the correct device index, update the value in your app changing in the file **audio/audio.py**
 ```bash
 DEFAULT_DEVICE_INDEX = 1  # ← your working device
 ```
@@ -101,14 +100,15 @@ The app uses OpenAI Whisper (speech-to-text) + spaCy (text parsing), so phrasing
 ### ✅ Example Phrases
 
 - "Suggest a recipe for **2 people** in **20 minutes**"
-- "I want something with **chicken** and **rice**"
-- "Find a dish for **4 persons** that excludes **onion** and **garlic**"
-- "What can I cook for **3 people** in **30 minutes** with **zucchini**"
+- "I want something with **pasta** and with **rice**"
+- "Find a dish for **4 persons** with **onion** and no **garlic**"
+- "What can I cook for **3 people** in **30 minutes** with **zucchini** that excludes **onion**?"
 - "Give me a recipe without **tuna**"
 
 You can combine:
 - ⏱️ **Time** (e.g., “20 minutes”)
 - 👥 **Portions** (e.g., “3 people”)
+- 💸 **Buy ingredients** (e.g., "buy ingredients")
 - ❤️ **Preferred ingredients** (e.g., “with chicken”)
 - 🚫 **Unwanted ingredients** (e.g., “without onion”)
 
@@ -130,7 +130,8 @@ Don't have a mic? No problem.
 You can use **TasteNotWaste manually**:
 
 - Set the number of portions via slider  
-- Choose prep time with a simple range  
+- Choose prep time with a simple range
+- Decide if you want to buy or not ingredients
 - Select your favorite and unwanted ingredients from dropdowns  
 - Click **"Suggest recipes"** to get recommendations
 
