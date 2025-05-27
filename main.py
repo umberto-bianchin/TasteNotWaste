@@ -71,7 +71,7 @@ ingredientsName = list(ing_map.keys())
 
 portions = st.slider("Number of portions", 1, 10, 1)
 max_time = st.slider("Max prep time (min)", 5, 60, 30)
-buyIng = st.checkbox("Buy ingredients")
+buyIng = not st.checkbox("I don't want to buy other ingredients")
 unwantedIngName = st.multiselect("Allergies", ingredientsName)
 preferredIngName = st.multiselect("Favourite Ingredients", ingredientsName)
 
@@ -87,7 +87,7 @@ if manual_trigger:
     unwantedIng = [ing_map[n] for n in unwantedIngName]
     preferredIng = [ing_map[n] for n in preferredIngName]
     best = best_recipes(myPantry, myRecipes, preferredIng, unwantedIng, not buyIng, portions, max_time)
-
+    
     with results_container:
         results_container.empty()
         render_recipes(best, myRecipes, myPantry, portions, buyIng)
@@ -100,7 +100,7 @@ if voice_trigger:
                 status_box.info("🔴 Recording in progress...")
                 audio = record_audio(duration=10)
                 status_box.empty()
-            
+
             text = transcribe_audio(audio)
             st.success(f"✅ You said: *{text}*")
 

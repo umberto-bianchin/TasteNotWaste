@@ -10,9 +10,9 @@ Mashed Potatoes,Side Dish,Potatoes: 3 pcs; Butter: 30 g; Milk: 50 ml; Salt: 5 g,
 Egg Fried Rice,Main Course,Rice: 200 g; Eggs: 2 pcs; Green Peas: 50 g; Carrots: 1 pcs; Soy Sauce: 15 ml; Olive Oil: 15 ml,20,"Scramble eggs, stir-fry with rice and veggies, season with soy sauce."
 Garlic Bread,Side Dish,Bread: 4 slices; Garlic: 2 cloves; Butter: 30 g; Parsley: 5 g,10,"Mix minced garlic with butter, spread on bread, toast until golden and crisp."
 Caprese Salad,Appetizer,Tomatoes: 3 pcs; Mozzarella: 100 g; Basil: 10 g; Olive Oil: 15 ml; Salt: 2 g,10,"Slice tomatoes and mozzarella, layer with basil, drizzle with olive oil and salt."
-Chicken Alfredo Pasta,Main Course,Fettuccine: 200 g; Chicken Breast: 150 g; Cream: 100 ml; Parmesan: 50 g; Garlic: 2 cloves,30,"Cook fettuccine and chicken, mix with cream, parmesan, and garlic for a creamy pasta."
-Greek Yogurt Parfait,Breakfast,Greek Yogurt: 200 ml; Honey: 20 g; Granola: 50 g; Berries: 100 g,5,"Layer yogurt with granola and berries, drizzle with honey and serve chilled."
-Vegetable Soup,Soup,Carrots: 2 pcs; Potatoes: 2 pcs; Onion: 1 pcs; Celery: 1 stalk; Vegetable Broth: 500 ml,35,Boil chopped vegetables in broth until soft. Season to taste.
+Chicken Alfredo Pasta,Main Course,Fettuccine: 200 g; Chicken Breast: 150 g; Cream: 100 g; Parmesan: 50 g; Garlic: 2 cloves,30,"Cook fettuccine and chicken, mix with cream, parmesan, and garlic for a creamy pasta."
+Greek Yogurt Parfait,Breakfast,Greek Yogurt: 200 g; Honey: 20 g; Granola: 50 g; Berries: 100 g,5,"Layer yogurt with granola and berries, drizzle with honey and serve chilled."
+Vegetable Soup,Soup,Carrots: 2 pcs; Potatoes: 2 pcs; Onion: 1 pcs; Celery: 10 g; Vegetable Broth: 500 ml,35,Boil chopped vegetables in broth until soft. Season to taste.
 Tuna Sandwich,Snack,Bread: 2 slices; Canned Tuna: 1 can; Mayonnaise: 20 g; Lettuce: 30 g,10,"Mix tuna with mayo, spread on bread with lettuce, and serve as sandwich."
 Lemon Garlic Salmon,Main Course,Salmon Fillet: 200 g; Lemon Juice: 15 ml; Garlic: 2 cloves; Olive Oil: 20 ml,25,"Marinate salmon with lemon and garlic, then bake or grill until done."
 Baked Mac and Cheese,Main Course,Macaroni: 200 g; Cheddar Cheese: 100 g; Milk: 200 ml; Butter: 30 g; Flour: 20 g,35,"Make cheese sauce, combine with macaroni, bake until bubbly and golden."
@@ -20,22 +20,22 @@ Avocado Toast,Breakfast,Bread: 2 slices; Avocado: 1 pcs; Lemon Juice: 5 ml; Salt
 Beef Tacos,Main Course,Taco Shells: 3 pcs; Ground Beef: 150 g; Onion: 1 pcs; Lettuce: 50 g; Cheese: 50 g,20,"Cook beef with onions, assemble tacos with lettuce and cheese."
 Caesar Salad,Appetizer,Romaine Lettuce: 100 g; Croutons: 30 g; Parmesan: 30 g; Caesar Dressing: 50 ml,10,"Toss lettuce with croutons, parmesan, and Caesar dressing before serving."
 Shrimp Scampi,Main Course,Shrimp: 200 g; Garlic: 3 cloves; Lemon Juice: 20 ml; Olive Oil: 30 ml; Parsley: 5 g; Spaghetti: 150 g,25,Cook shrimp with garlic and lemon in olive oil. Toss with spaghetti and parsley.
-Stuffed Bell Peppers,Main Course,Bell Peppers: 4 pcs; Ground Beef: 200 g; Rice: 100 g; Tomato Sauce: 100 ml; Onion: 1 pcs,40,"Stuff bell peppers with seasoned beef and rice, bake with tomato sauce."
-Minestrone Soup,Soup,Carrots: 1 pcs; Celery: 1 stalk; Onion: 1 pcs; Zucchini: 1 pcs; Pasta: 50 g; Beans: 100 g; Broth: 500 ml,35,Cook vegetables and pasta in broth with beans for a hearty soup.
+Stuffed Bell Peppers,Main Course,Bell Peppers: 4 pcs; Ground Beef: 200 g; Rice: 100 g; Tomato Sauce: 100 g; Onion: 1 pcs,40,"Stuff bell peppers with seasoned beef and rice, bake with tomato sauce."
+Minestrone Soup,Soup,Carrots: 1 pcs; Celery: 10 g; Onion: 1 pcs; Zucchini: 1 pcs; Pasta: 50 g; Beans: 100 g; Broth: 500 ml,35,Cook vegetables and pasta in broth with beans for a hearty soup.
 Pancakes,Breakfast,Flour: 200 g; Eggs: 2 pcs; Milk: 250 ml; Baking Powder: 5 g; Sugar: 20 g; Butter: 30 g,20,"Mix ingredients into batter, cook pancakes on a skillet until golden."
 BBQ Chicken Wrap,Snack,Tortilla: 1 pcs; Chicken Breast: 150 g; BBQ Sauce: 30 ml; Lettuce: 30 g; Cheese: 40 g,15,"Grill chicken, wrap with lettuce, cheese, and BBQ sauce in tortilla."
 Chickpea Curry,Main Course,Chickpeas: 200 g; Onion: 1 pcs; Garlic: 2 cloves; Coconut Milk: 200 ml; Curry Powder: 10 g,30,"Sauté onion and garlic, add chickpeas and curry powder, simmer in coconut milk."
 Egg Salad Sandwich,Snack,Eggs: 3 pcs; Mayonnaise: 30 g; Bread: 2 slices; Mustard: 5 g; Lettuce: 20 g,12,"Mix chopped boiled eggs with mayo and mustard, serve on bread with lettuce."
 Vegetable Quesadilla,Snack,Tortilla: 1 pcs; Bell Pepper: 1 pcs; Onion: 1 pcs; Cheese: 50 g; Olive Oil: 10 ml,15,"Sauté vegetables, place on tortilla with cheese, fold and cook until crisp."
-Lentil Soup,Soup,Lentils: 200 g; Carrots: 1 pcs; Celery: 1 stalk; Onion: 1 pcs; Garlic: 2 cloves; Broth: 500 ml,35,Cook lentils with vegetables in broth until tender. Season and serve hot.
-Fruit Smoothie,Breakfast,Banana: 1 pcs; Strawberries: 100 g; Greek Yogurt: 150 ml; Honey: 10 g; Milk: 100 ml,5,Blend all ingredients until smooth and creamy. Serve chilled.
-Spinach Ricotta Lasagna,Main Course,Lasagna Sheets: 6 pcs; Ricotta Cheese: 200 g; Spinach: 150 g; Tomato Sauce: 200 ml; Parmesan: 50 g,45,"Layer cooked spinach, ricotta, and sauce between lasagna sheets. Bake and top with parmesan."
-Falafel Wrap,Snack,Falafel: 3 pcs; Pita Bread: 1 pcs; Lettuce: 30 g; Tomato: 1 pcs; Yogurt Sauce: 30 ml,20,"Stuff pita with falafel, lettuce, and tomato. Drizzle with yogurt sauce and serve."
+Lentil Soup,Soup,Lentils: 200 g; Carrots: 1 pcs; Celery: 10 g; Onion: 1 pcs; Garlic: 2 cloves; Broth: 500 ml,35,Cook lentils with vegetables in broth until tender. Season and serve hot.
+Fruit Smoothie,Breakfast,Banana: 1 pcs; Strawberries: 100 g; Greek Yogurt: 150 g; Honey: 10 g; Milk: 100 ml,5,Blend all ingredients until smooth and creamy. Serve chilled.
+Spinach Ricotta Lasagna,Main Course,Lasagna Sheets: 6 pcs; Ricotta Cheese: 200 g; Spinach: 150 g; Tomato Sauce: 200 g; Parmesan: 50 g,45,"Layer cooked spinach, ricotta, and sauce between lasagna sheets. Bake and top with parmesan."
+Falafel Wrap,Snack,Falafel: 3 pcs; Pita Bread: 1 slices; Lettuce: 30 g; Tomato: 1 pcs; Yogurt Sauce: 30 g,20,"Stuff pita with falafel, lettuce, and tomato. Drizzle with yogurt sauce and serve."
 Baked Sweet Potato,Side Dish,Sweet Potatoes: 2 pcs; Olive Oil: 20 ml; Salt: 5 g; Black Pepper: 3 g,35,"Slice sweet potatoes, toss in oil and spices. Bake until tender and crispy on edges."
 Chicken Noodle Soup,Soup,Chicken Breast: 150 g; Carrots: 1 pcs; Onion: 1 pcs; Egg Noodles: 100 g; Broth: 500 ml,30,Simmer chicken and vegetables in broth. Add noodles and cook until tender.
 Mango Chia Pudding,Breakfast,Chia Seeds: 30 g; Coconut Milk: 200 ml; Mango: 1 pcs; Honey: 10 g,10,Mix chia seeds with milk and refrigerate. Top with mango chunks and honey before serving.
 Quinoa Avocado Bowl,Main Course,Quinoa: 150 g; Avocado: 1 pcs; Cherry Tomatoes: 6 pcs; Lemon Juice: 10 ml; Olive Oil: 10 ml,25,"Cook quinoa, mix with diced avocado and tomatoes. Dress with lemon and oil."
 Broccoli Cheese Soup,Soup,Broccoli: 200 g; Cheddar Cheese: 100 g; Onion: 1 pcs; Milk: 200 ml; Butter: 20 g,30,"Cook broccoli and onion in butter, add milk and cheese, blend to a creamy consistency."
-Stuffed Zucchini Boats,Main Course,Zucchini: 2 pcs; Ground Turkey: 150 g; Onion: 1 pcs; Tomato Sauce: 100 ml; Mozzarella: 50 g,35,"Hollow zucchini, fill with turkey mix, top with sauce and cheese, and bake."
+Stuffed Zucchini Boats,Main Course,Zucchini: 2 pcs; Ground Turkey: 150 g; Onion: 1 pcs; Tomato Sauce: 100 g; Mozzarella: 50 g,35,"Hollow zucchini, fill with turkey mix, top with sauce and cheese, and bake."
 Chocolate Banana Muffins,Snack,Bananas: 2 pcs; Flour: 200 g; Cocoa Powder: 30 g; Eggs: 2 pcs; Sugar: 100 g; Butter: 50 g,30,Mix mashed bananas with dry ingredients. Bake in muffin tins until fluffy.
 Avocado Egg Toast,Breakfast,Bread: 2 slices; Avocado: 1 pcs; Eggs: 2 pcs; Salt: 2 g; Black Pepper: 1 g,10,"Toast bread, top with mashed avocado and fried eggs. Season with salt and pepper."

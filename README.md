@@ -16,9 +16,10 @@ A smart AI-powered recipe recommender that helps you minimize food waste by sugg
 conda create -n tasteNotWaste python=3.10
 conda activate tasteNotWaste
 
-conda install -c conda-forge ffmpeg numpy scipy python-sounddevice
+conda install -c conda-forge ffmpeg numpy scipy portaudio
+pip install pyaudio
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
-pip install openai-whisper streamlit spacy
+pip install openai-whisper streamlit spacy pyttsx3
 python -m spacy download en_core_web_sm
 
 # To avoid libomp conflict with Whisper + Torch
@@ -35,9 +36,10 @@ echo "[server]\nfileWatcherType = \"none\"" > ~/.streamlit/config.toml
 conda create -n tasteNotWaste python=3.10
 conda activate tasteNotWaste
 
-conda install -c conda-forge ffmpeg numpy scipy python-sounddevice
+conda install -c conda-forge ffmpeg numpy scipy portaudio
+pip install pyaudio
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
-pip install openai-whisper streamlit spacy
+pip install openai-whisper streamlit spacy pyttsx3
 python -m spacy download en_core_web_sm
 
 # Disable Streamlit file watcher (optional but recommended)
@@ -47,35 +49,19 @@ echo "[server]\nfileWatcherType = \"none\"" > ~/.streamlit/config.toml
 
 ## 🎧 Microphone Setup
 
-To make sure the voice input works correctly, you need to **select the right audio input device** for your system.
+To make sure the voice input works correctly, use the provided tool `mic_test.py` to detect and test microphones.
 
-Use the provided tool `mic_test.py` to detect and test microphones.
-
-### 🧪 Step-by-Step: Test and Choose Microphone
+### 🧪 Step-by-Step: Test Microphone
 
 1. Run the mic test script:
    ```bash
    python mic_test.py
     ```
-
-2. It will list available input devices
-3. Enter the device index when prompted. For example:
-    ```bash
-    Select device index to record from: 1
-    Enter duration in seconds: 5
-    ```
-4. A short audio clip will be recorded and saved as test.wav.
-5. The waveform will be plotted so you can visually confirm the mic is working.
-
-### ✅ Set the Selected Device
-Once you identify the correct device index, update the value in your app changing in the file **audio/audio.py**
-```bash
-DEFAULT_DEVICE_INDEX = 1  # ← your working device
-```
+2. A short audio clip will be recorded and saved as test.wav.
+5. Listen to the `test.wav` to confirm the mic is working.
 
 💡 If nothing records or waveform is flat:
 
-- Try another input device
 - Check OS mic permissions
 
 ##  Run the App
