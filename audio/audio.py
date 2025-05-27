@@ -1,26 +1,46 @@
 # audio_utils.py
-
+import pyaudio
+import wave
 import tempfile
-import numpy as np
-import sounddevice as sd
 import whisper
 import spacy
-from scipy.io.wavfile import write
 
 
 nlp = spacy.load("en_core_web_sm")
-DEFAULT_DEVICE_INDEX = 5
 
-def record_audio(duration=10, samplerate=16000, device=DEFAULT_DEVICE_INDEX):
-    sd.default.device = (device, None)
-    recording = sd.rec(int(duration * samplerate), samplerate=samplerate, channels=1, dtype='float32')
-    sd.wait()
-    return recording.flatten()
+def record_audio(duration=10, filename=None, samplerate=44100):
+    CHUNK = 1024
+    FORMAT = pyaudio.paInt16
+    CHANNELS = 1
+    RATE = samplerate
 
-def transcribe_audio(audio, samplerate=16000):
-    with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as f:
-        write(f.name, samplerate, (audio * 32767).astype(np.int16))
-        path = f.name
+    p = pyaudio.PyAudio()
+
+    stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK)
+
+    frames = []
+    for _ in range(0, int(RATE / CHUNK * duration)):
+        data = stream.read(CHUNK)
+        frames.append(data)
+
+    stream.stop_stream()
+    stream.close()
+    p.terminate()
+
+    if filename is None:
+        tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".wav")
+        filename = tmp.name
+
+    wf = wave.open(filename, 'wb')
+    wf.setnchannels(CHANNELS)
+    wf.setsampwidth(p.get_sample_size(FORMAT))
+    wf.setframerate(RATE)
+    wf.writeframes(b''.join(frames))
+    wf.close()
+
+    return filename
+
+def transcribe_audio(path):
     model = whisper.load_model("small")
     result = model.transcribe(path, language="en")
     return result["text"].strip()
