@@ -10,7 +10,26 @@ A smart AI-powered recipe recommender that helps you minimize food waste by sugg
 
 ---
 
-## 💻 Mac Installation
+## 📋 Requirements
+
+Before running the application, make sure you have the following software and Python packages installed:
+
+- **Python 3.10+**
+- **ffmpeg**
+- **numpy**
+- **scipy**
+- **portaudio**
+- **pyaudio**
+- **torch**, **torchvision**, **torchaudio** (CPU versions)
+- **openai-whisper**
+- **streamlit**
+- **spacy**
+- **pyttsx3**
+- **spaCy model:** `en_core_web_sm`
+
+---
+
+## 💻 Mac Installation with Conda
 
 ```bash
 conda create -n tasteNotWaste python=3.10
@@ -30,7 +49,7 @@ mkdir -p ~/.streamlit
 echo "[server]\nfileWatcherType = \"none\"" > ~/.streamlit/config.toml
 ```
 
-## 🖥️ Windows Installation
+## 🖥️ Windows Installation with Conda
 
 ```bash
 conda create -n tasteNotWaste python=3.10
@@ -46,7 +65,40 @@ python -m spacy download en_core_web_sm
 mkdir -p ~/.streamlit
 echo "[server]\nfileWatcherType = \"none\"" > ~/.streamlit/config.toml
 ```
+---
 
+## 📂 Installation Scripts
+In the `scripts/` folder, you’ll find two helper scripts that automate the setup process:
+
+- **`conda_install.py`**  
+  A Python script that:
+  1. Creates and activates a Conda environment named `tasteNotWaste` (Python 3.10).  
+  2. Installs all required packages inside that environment (via `conda` and `pip`).  
+  3. Downloads the spaCy model `en_core_web_sm`.  
+  4. Creates/updates the Streamlit config to disable the file watcher.
+
+  To run:
+  ```bash
+  cd scripts
+  python conda_install.py
+  ```
+
+- **`normal_install.py`**  
+  A Python script that:
+  1. Verifies you’re on Python 3.10+.  
+  2. Creates a virtual environment named `.venv`.  
+  3. Installs all required packages inside `.venv` (via `pip`).  
+  4. Downloads the spaCy model `en_core_web_sm`.  
+  5. Creates/updates the Streamlit config to disable the file watcher.
+
+  To run:
+  ```bash
+  cd scripts
+  python normal_install.py
+  ```
+
+
+---
 ## 🎧 Microphone Setup
 
 To make sure the voice input works correctly, use the provided tool `mic_test.py` to detect and test microphones.
