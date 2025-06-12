@@ -20,8 +20,7 @@ def compute_score(recipe, pantry, preferred_ingredients):
         if pantry_item:
             quantity_ratio = min(pantry_item.ing.amount / ingredient.amount, 1)
             bonus = PANTRY_BONUS * quantity_ratio
-            if EXPIRY_THRESHOLD >= pantry_item.days_to_expiry():
-                bonus += EXPIRY_BONUS * math.exp(-k * pantry_item.days_to_expiry())
+            bonus += EXPIRY_BONUS * math.exp(-k * pantry_item.days_to_expiry())
             score += bonus
         else:
             score -= PANTRY_MALUS
