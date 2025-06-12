@@ -29,6 +29,38 @@ Before running the application, make sure you have the following software and Py
 
 ---
 
+## 📂 Installation Scripts
+In the `scripts/` folder, you’ll find two helper scripts that automate the setup process:
+
+- **`conda_install.py`**  
+  A Python script that:
+  1. Creates and activates a Conda environment named `tasteNotWaste` (Python 3.10).  
+  2. Installs all required packages inside that environment (via `conda` and `pip`).  
+  3. Downloads the spaCy model `en_core_web_sm`.  
+  4. Creates/updates the Streamlit config to disable the file watcher.
+
+  To run:
+  ```bash
+  cd scripts
+  python conda_install.py
+  ```
+
+- **`normal_install.py`**  
+  A Python script that:
+  1. Verifies you’re on Python 3.10+.  
+  2. Creates a virtual environment named `.venv`.  
+  3. Installs all required packages inside `.venv` (via `pip`).  
+  4. Downloads the spaCy model `en_core_web_sm`.  
+  5. Creates/updates the Streamlit config to disable the file watcher.
+
+  To run:
+  ```bash
+  cd scripts
+  python normal_install.py
+  ```
+
+---
+
 ## 💻 Mac Installation with Conda
 
 ```bash
@@ -65,37 +97,6 @@ python -m spacy download en_core_web_sm
 mkdir -p ~/.streamlit
 echo "[server]\nfileWatcherType = \"none\"" > ~/.streamlit/config.toml
 ```
----
-
-## 📂 Installation Scripts
-In the `scripts/` folder, you’ll find two helper scripts that automate the setup process:
-
-- **`conda_install.py`**  
-  A Python script that:
-  1. Creates and activates a Conda environment named `tasteNotWaste` (Python 3.10).  
-  2. Installs all required packages inside that environment (via `conda` and `pip`).  
-  3. Downloads the spaCy model `en_core_web_sm`.  
-  4. Creates/updates the Streamlit config to disable the file watcher.
-
-  To run:
-  ```bash
-  cd scripts
-  python conda_install.py
-  ```
-
-- **`normal_install.py`**  
-  A Python script that:
-  1. Verifies you’re on Python 3.10+.  
-  2. Creates a virtual environment named `.venv`.  
-  3. Installs all required packages inside `.venv` (via `pip`).  
-  4. Downloads the spaCy model `en_core_web_sm`.  
-  5. Creates/updates the Streamlit config to disable the file watcher.
-
-  To run:
-  ```bash
-  cd scripts
-  python normal_install.py
-  ```
 
 
 ---
@@ -119,10 +120,10 @@ To make sure the voice input works correctly, use the provided tool `mic_test.py
 ##  Run the App
 ```bash
 # Mac (with env var for OpenMP fix)
-KMP_DUPLICATE_LIB_OK=TRUE streamlit run main.py
+KMP_DUPLICATE_LIB_OK=TRUE streamlit run home.py
 
 # or if already exported (Mac or Windows)
-streamlit run main.py
+streamlit run home.py
 ```
 
 ---

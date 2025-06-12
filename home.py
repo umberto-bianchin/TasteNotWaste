@@ -48,7 +48,7 @@ def render_recipes(best, recipes, pantry, portions, buyIng):
                 {recipe.description}
             """)
 
-#update_expiration()
+update_expiration()
 
 # Retrieve csv data
 myPantry, myRecipes = parse_csv()
