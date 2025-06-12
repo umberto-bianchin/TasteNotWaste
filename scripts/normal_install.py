@@ -2,6 +2,7 @@ import os
 import subprocess
 import sys
 import venv
+import platform
 
 def run(cmd):
     print(f"➡️  {cmd}")
@@ -17,15 +18,28 @@ def create_venv():
     venv.create(".venv", with_pip=True)
 
 def install_packages():
-    pip_path = os.path.join(".venv", "bin", "pip") if os.name != "nt" else os.path.join(".venv", "Scripts", "pip.exe")
-    python_path = os.path.join(".venv", "bin", "python") if os.name != "nt" else os.path.join(".venv", "Scripts", "python.exe")
+    is_windows = os.name == "nt"
+    pip_path = os.path.join(".venv", "Scripts", "pip.exe") if is_windows else os.path.join(".venv", "bin", "pip")
+    python_path = os.path.join(".venv", "Scripts", "python.exe") if is_windows else os.path.join(".venv", "bin", "python")
 
-    run(f"{pip_path} install ffmpeg-python numpy scipy pyaudio")
+    run(f"{pip_path} install ffmpeg-python numpy scipy")
+
+    if is_windows:
+        run(f"{pip_path} install pipwin")
+        run(f"{pip_path} install --upgrade setuptools wheel")  # Ensure build tools are OK
+        run(f"{pip_path} uninstall -y pyaudio || true")
+        run(f"{pip_path} install pyaudio || {pip_path} install pipwin && pipwin install pyaudio")
+    elif platform.system() == "Darwin":
+        run(f"brew install portaudio")
+        run(f'export LDFLAGS="-L/opt/homebrew/lib" CPPFLAGS="-I/opt/homebrew/include" && {pip_path} install pyaudio')
+    else:
+        run(f"{pip_path} install pyaudio")
+
     run(f"{pip_path} install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu")
     run(f"{pip_path} install openai-whisper streamlit spacy pyttsx3")
     run(f"{python_path} -m spacy download en_core_web_sm")
 
-    config_dir = os.path.expanduser("~/.streamlit") if os.name != 'nt' else os.path.expanduser("~\\.streamlit")
+    config_dir = os.path.expanduser("~/.streamlit") if not is_windows else os.path.expanduser("~\\.streamlit")
     os.makedirs(config_dir, exist_ok=True)
     with open(os.path.join(config_dir, "config.toml"), "w") as f:
         f.write('[server]\nfileWatcherType = "none"\n')
@@ -36,7 +50,6 @@ def main():
     check_python_version()
     create_venv()
     install_packages()
-    print("ℹ️ Usage '.venv/bin/streamlit run home.py' (or 'Scripts\\streamlit' on Windows) to launch the app.")
 
 if __name__ == "__main__":
     main()
