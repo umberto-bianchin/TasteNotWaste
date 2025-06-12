@@ -9,11 +9,11 @@ def run(cmd):
 
 def check_python_version():
     if sys.version_info < (3, 10):
-        print("❌ Python 3.10+ è richiesto.")
+        print("❌ Python 3.10+ is needed.")
         sys.exit(1)
 
 def create_venv():
-    print("🔧 Creo ambiente virtuale in './.venv'")
+    print("🔧 Creating virtual environment in './.venv'")
     venv.create(".venv", with_pip=True)
 
 def install_packages():
@@ -30,13 +30,13 @@ def install_packages():
     with open(os.path.join(config_dir, "config.toml"), "w") as f:
         f.write('[server]\nfileWatcherType = "none"\n')
 
-    print("✅ Setup completato (senza Conda)")
+    print("✅ Setup completed")
 
 def main():
     check_python_version()
     create_venv()
     install_packages()
-    print("ℹ️ Usa '.venv/bin/streamlit run app.py' (o 'Scripts\\streamlit' su Windows) per avviare l’app.")
+    print("ℹ️ Usage '.venv/bin/streamlit run home.py' (or 'Scripts\\streamlit' on Windows) to launch the app.")
 
 if __name__ == "__main__":
     main()

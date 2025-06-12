@@ -27,7 +27,8 @@ def main():
     with open(os.path.join(config_dir, "config.toml"), "w") as f:
         f.write('[server]\nfileWatcherType = "none"\n')
 
-    print("✅ Setup completato (Conda)")
+    print("✅ Setup completed (Conda)")
+    print("ℹ️ Usage 'conda activate tasteNotWaste' and then 'streamlit run home.py' to launch the app.")
 
 if __name__ == "__main__":
     main()

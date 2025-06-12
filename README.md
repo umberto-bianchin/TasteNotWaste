@@ -98,6 +98,54 @@ mkdir -p ~/.streamlit
 echo "[server]\nfileWatcherType = \"none\"" > ~/.streamlit/config.toml
 ```
 
+## 🚀 Running the App
+
+Once you've created the virtual environment using one of the setup scripts (`setup_with_conda.py` or `setup_without_conda.py`), or after you installed all the needed packages, follow these steps to activate the environment and launch the app.
+
+### ✅ 1. Activate the environment
+
+#### Using `venv` (created by `normal_install.py`):
+
+- **macOS / Linux:**
+  ```bash
+  source .venv/bin/activate
+  ```
+
+- **Windows (Command Prompt):**
+  ```cmd
+  .venv\Scripts\activate.bat
+  ```
+
+- **Windows (PowerShell):**
+  ```powershell
+  .venv\Scripts\Activate.ps1
+  ```
+
+#### Using Conda (created by `conda_install.py`):
+
+```bash
+conda activate tasteNotWaste
+```
+
+---
+
+### ▶️ 2. Launch the app
+
+From the root of the project, run:
+```bash
+streamlit run home.py
+```
+
+---
+
+### ❌ Deactivate the environment (when you're done)
+
+To deactivate the environment:
+
+```bash
+deactivate        # for venv
+conda deactivate  # for conda
+```
 
 ---
 ## 🎧 Microphone Setup
@@ -116,15 +164,6 @@ To make sure the voice input works correctly, use the provided tool `mic_test.py
 💡 If nothing records or waveform is flat:
 
 - Check OS mic permissions
-
-##  Run the App
-```bash
-# Mac (with env var for OpenMP fix)
-KMP_DUPLICATE_LIB_OK=TRUE streamlit run home.py
-
-# or if already exported (Mac or Windows)
-streamlit run home.py
-```
 
 ---
 
