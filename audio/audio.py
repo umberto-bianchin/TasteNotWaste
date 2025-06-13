@@ -50,7 +50,7 @@ def extract_filters(text, ingredientsName):
     portions, max_time = 1, 30
     preferred, unwanted = [], []
     ingredients_lower = [i.lower() for i in ingredientsName]
-    buy_ingredients = False
+    buy_ingredients = True
 
     word_to_num = {
         "one": 1, "two": 2, "three": 3, "four": 4, "five": 5,

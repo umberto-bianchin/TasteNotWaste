@@ -14,7 +14,7 @@ A smart AI-powered recipe recommender that helps you minimize food waste by sugg
 
 Before running the application, make sure you have the following software and Python packages installed:
 
-- **Python 3.10+**
+- **Python 3.10**
 - **ffmpeg**
 - **numpy**
 - **scipy**
@@ -26,6 +26,21 @@ Before running the application, make sure you have the following software and Py
 - **spacy**
 - **pyttsx3**
 - **spaCy model:** `en_core_web_sm`
+
+---
+
+## 📦 Installing Conda (optional)
+
+We recommend installing **[Anaconda Distribution](https://www.anaconda.com/download/)** to use **Conda** to create a virtual environment, so you can execute the automatic script or you can do the manual installation with conda
+---
+
+### ✅ Verify installation
+
+After you install the package, restart your terminal and run:
+
+```bash
+conda --version
+```
 
 ---
 
@@ -61,7 +76,7 @@ In the `scripts/` folder, you’ll find two helper scripts that automate the set
 
 ---
 
-## 💻 Mac Installation with Conda
+## 💻 Manual Installation with Conda
 
 ```bash
 conda create -n tasteNotWaste python=3.10
@@ -73,25 +88,8 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 pip install openai-whisper streamlit spacy pyttsx3
 python -m spacy download en_core_web_sm
 
-# To avoid libomp conflict with Whisper + Torch
-export KMP_DUPLICATE_LIB_OK=TRUE
-
-# Disable Streamlit file watcher (optional but recommended)
-mkdir -p ~/.streamlit
-echo "[server]\nfileWatcherType = \"none\"" > ~/.streamlit/config.toml
-```
-
-## 🖥️ Windows Installation with Conda
-
-```bash
-conda create -n tasteNotWaste python=3.10
-conda activate tasteNotWaste
-
-conda install -c conda-forge ffmpeg numpy scipy portaudio
-pip install pyaudio
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
-pip install openai-whisper streamlit spacy pyttsx3
-python -m spacy download en_core_web_sm
+# To avoid libomp conflict with Whisper + Torch on MacOS
+export KMP_DUPLICATE_LIB_OK=TRUE    # just for MacOS
 
 # Disable Streamlit file watcher (optional but recommended)
 mkdir -p ~/.streamlit
@@ -100,12 +98,12 @@ echo "[server]\nfileWatcherType = \"none\"" > ~/.streamlit/config.toml
 
 ## 🚀 Running the App
 
-Once you've created the virtual environment using one of the setup scripts (`setup_with_conda.py` or `setup_without_conda.py`), or after you installed all the needed packages, follow these steps to activate the environment and launch the app.
+Once you've created the virtual environment using one of the setup scripts (`setup_with_conda.py` or `setup_without_conda.py`), or after you installed manually all the needed packages, follow these steps to activate the environment and launch the app.
 
 ### ✅ 1. Activate the environment
 
 #### Using `venv` (created by `normal_install.py`):
-
+Inside the scripts folder do:
 - **macOS / Linux:**
   ```bash
   source .venv/bin/activate
@@ -120,6 +118,12 @@ Once you've created the virtual environment using one of the setup scripts (`set
   ```powershell
   .venv\Scripts\Activate.ps1
   ```
+
+  If you get an error saying something like "...The script execution is disabled...", you can activate it with
+  ```powershell
+  Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+  ```
+  and then activate the environment
 
 #### Using Conda (created by `conda_install.py`):
 
@@ -170,6 +174,11 @@ To make sure the voice input works correctly, use the provided tool `mic_test.py
 ## 🎤 Voice Mode (Speech-to-Recipe)
 
 TasteNotWaste includes an optional voice interface that lets you speak your request instead of filling in the filters manually.
+
+## ‼️ Important
+Note that at the first run of the app, whisper has to download the model, so after you use the voice function, you have to wait a couple of seconds for the library to download the model (time depends on your connection). After the first usage of the function, this will not be needed anymore.
+
+---
 
 ### 🗣️ What You Can Say
 
