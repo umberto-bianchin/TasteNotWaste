@@ -1,3 +1,5 @@
+from datetime import datetime, date
+
 import streamlit as st
 from score.score import best_recipes, calc_stats
 from helper.csv_parser import parse_csv, update_expiration
@@ -48,7 +50,7 @@ def render_recipes(best, recipes, pantry, portions, buyIng):
                 {recipe.description}
             """)
 
-update_expiration()
+update_expiration(datetime.today().date())
 
 # Retrieve csv data
 myPantry, myRecipes = parse_csv()

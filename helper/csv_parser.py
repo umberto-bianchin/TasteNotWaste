@@ -1,5 +1,5 @@
 import pandas as pd
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 
 from models.ingredient import Ingredient
 from models.pantry import PantryIngredient
@@ -67,22 +67,20 @@ def parse_csv():
     return parse_pantry(pantry_df), parse_recipes(recipe_df)
 
 
-def update_expiration():
+def update_expiration(reference_date: date):
     pantry_df = pd.read_csv("data/ingredient_dataset.csv")
 
     expiration_dates = pantry_df["expiration_date"].dropna().apply(parse_date)
     oldest_date = min(expiration_dates)
-    today = datetime.today().date()
-
-    offset_days = (today - oldest_date).days + 1
+    offset_days = (reference_date - oldest_date).days + 1
 
     for index, row in pantry_df.iterrows():
         expiration = parse_date(row.get("expiration_date", ""))
         opened = parse_date(row.get("opened_date", ""))
         new_expiration = update_date(expiration, offset_days)
         new_opened = update_date(opened, offset_days)
-        if new_opened and new_opened > today:
-            new_opened = today
+        if new_opened and new_opened > reference_date:
+            new_opened = reference_date
 
         pantry_df.at[index, "expiration_date"] = new_expiration.strftime("%Y-%m-%d") if new_expiration else ""
         pantry_df.at[index, "opened_date"] = new_opened.strftime("%Y-%m-%d") if new_opened else ""

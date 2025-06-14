@@ -33,9 +33,9 @@ Before running the application, make sure you have the following software and Py
 
 We recommend installing **[Anaconda Distribution](https://www.anaconda.com/download/)** to use **Conda** to create a virtual environment, so you can execute the automatic script or you can do the manual installation with conda.
 
-On windows you MUST use conda if you want the voice function to work.
+On windows you NEED to use conda for the voice function to work.
 
----
+
 
 ### ✅ Verify installation
 
@@ -99,6 +99,7 @@ export KMP_DUPLICATE_LIB_OK=TRUE    # just for MacOS
 mkdir -p ~/.streamlit
 echo "[server]\nfileWatcherType = \"none\"" > ~/.streamlit/config.toml
 ```
+---
 
 ## 🚀 Running the App
 
@@ -119,7 +120,6 @@ Inside the scripts folder do:
 conda activate tasteNotWaste
 ```
 
----
 
 ### ▶️ 2. Launch the app
 
@@ -128,7 +128,7 @@ From the root of the project, run:
 streamlit run home.py
 ```
 
----
+
 
 ### ❌ Deactivate the environment (when you're done)
 
@@ -141,14 +141,50 @@ conda deactivate  # for conda
 
 ---
 
+## 🧪 Pantry data Disclaimer & Simulation Mode
+
+### ⚠️ Prototype Notice
+
+TasteNotWaste is currently a prototype, and as such it does not support ingredient input via the UI yet. All pantry data is read from a precompiled CSV file: `data/ingredient_dataset.csv`.
+
+This dataset contains the list of ingredients with their quantities, units, expiration dates, and optional open dates. The app assumes the contents of this file reflect your pantry state.
+
+
+### 🔄 Dataset Normalization for Testing
+
+In `home.py` (line 54), you'll find the following line:
+
+```python
+update_expiration(datetime.today().date())
+```
+
+This function ensures that the dataset is **shifted in time** so that expiration dates are consistent with the current day — simulating a realistic and valid pantry (i.e., no expired items by default, though some may be opened too long ago).
+
+### ⏳ Testing with Past Dates (Expired Items Simulation)
+
+To simulate how the system behaves with expired or nearly expired items, you can manually **change the reference date** used to adjust the dataset. Simply replace the default line with a fixed date in the past:
+
+```python
+update_expiration(date(2025, 6, 1))  # Example
+```
+
+This shifts all ingredient dates relative to June 1st, 2025, resulting in a dataset where many items may now appear expired or close to expiration as of that date. This allows you to:
+
+- ✅ Test the scoring function with urgency bonuses
+- ✅ See how expired ingredients are filtered
+- ✅ Simulate different pantry aging scenarios
+
+After changing the reference date, **run the application** again to reprocess the dataset under the new temporal conditions.
+
+---
+
 ## 🎤 Voice Mode (Speech-to-Recipe)
 
 TasteNotWaste includes an optional voice interface that lets you speak your request instead of filling in the filters manually.
 
-## ‼️ Important
+### ‼️ Important
 Note that at the first run of the app, whisper has to download the model, so after you use the voice function, you have to wait a couple of seconds for the library to download the model (time depends on your connection). After the first usage of the function, this will not be needed anymore.
 
----
 
 ### 🗣️ What You Can Say
 
@@ -175,10 +211,9 @@ You can combine:
 - Avoid long or vague sentences
 - Speak clearly and wait for the "Recording..." signal
 
----
-
 If the ingredient is not found in your pantry, it will be **skipped silently** and optionally listed in a warning.
 
+---
 
 ## 🛠️ Manual Mode (No Microphone Needed)
 
