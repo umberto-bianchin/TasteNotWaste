@@ -29,9 +29,12 @@ Before running the application, make sure you have the following software and Py
 
 ---
 
-## 📦 Installing Conda (optional)
+## 📦 Installing Conda
 
-We recommend installing **[Anaconda Distribution](https://www.anaconda.com/download/)** to use **Conda** to create a virtual environment, so you can execute the automatic script or you can do the manual installation with conda
+We recommend installing **[Anaconda Distribution](https://www.anaconda.com/download/)** to use **Conda** to create a virtual environment, so you can execute the automatic script or you can do the manual installation with conda.
+
+On windows you MUST use conda if you want the voice function to work.
+
 ---
 
 ### ✅ Verify installation
@@ -60,7 +63,8 @@ In the `scripts/` folder, you’ll find two helper scripts that automate the set
   python conda_install.py
   ```
 
-- **`normal_install.py`**  
+- **`normal_install.py`**   (MacOS - needs homebrew installed!)
+
   A Python script that:
   1. Verifies you’re on Python 3.10+.  
   2. Creates a virtual environment named `.venv`.  
@@ -109,23 +113,7 @@ Inside the scripts folder do:
   source .venv/bin/activate
   ```
 
-- **Windows (Command Prompt):**
-  ```cmd
-  .venv\Scripts\activate.bat
-  ```
-
-- **Windows (PowerShell):**
-  ```powershell
-  .venv\Scripts\Activate.ps1
-  ```
-
-  If you get an error saying something like "...The script execution is disabled...", you can activate it with
-  ```powershell
-  Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
-  ```
-  and then activate the environment
-
-#### Using Conda (created by `conda_install.py`):
+#### Using `Conda` (created by `conda_install.py`):
 
 ```bash
 conda activate tasteNotWaste
