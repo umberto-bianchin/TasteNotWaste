@@ -1,20 +1,13 @@
 from datetime import datetime, date
-
 import streamlit as st
 from score.score import best_recipes, calc_stats
 from helper.csv_parser import parse_csv, update_expiration
-import pyttsx3
 from audio.audio import (
     record_audio,
     transcribe_audio,
     extract_filters,
     resolve_ingredient_name
 )
-
-def speak(text):
-    engine = pyttsx3.init()
-    engine.say(text)
-    engine.runAndWait()
 
 def render_recipes(best, recipes, pantry, portions, buyIng):
     rank_emojis = ["🥇", "🥈", "🥉"] + ["🏅"] * 7
@@ -153,8 +146,6 @@ if voice_trigger:
         top_name = next(iter(best))
         top_recipe = next(r for r in myRecipes if r.name == top_name).scaled_portions(filters['portions'])
         ingredient_list = ", ".join(ing.name for ing in top_recipe.ingredients)
-        speech_text = f"The best recipe is {top_recipe.name}. Preparation time: {top_recipe.prep_time} minutes. Ingredients: {ingredient_list}."
-        speak(speech_text)
 
     except ValueError as err:
         st.error(f"❌ Unknown ingredient: '{err}'")
