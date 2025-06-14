@@ -140,24 +140,6 @@ conda deactivate  # for conda
 ```
 
 ---
-## 🎧 Microphone Setup
-
-To make sure the voice input works correctly, use the provided tool `mic_test.py` to detect and test microphones.
-
-### 🧪 Step-by-Step: Test Microphone
-
-1. Run the mic test script:
-   ```bash
-   python mic_test.py
-    ```
-2. A short audio clip will be recorded and saved as test.wav.
-5. Listen to the `test.wav` to confirm the mic is working.
-
-💡 If nothing records or waveform is flat:
-
-- Check OS mic permissions
-
----
 
 ## 🎤 Voice Mode (Speech-to-Recipe)
 
@@ -212,3 +194,20 @@ You can use **TasteNotWaste manually**:
 
 The voice functionality is optional and enhances the experience — but everything works without it too!
 
+---
+## 🎧 Microphone Test
+
+To make sure the voice input works correctly, use the provided tool `mic_test.py` to detect and test microphones.
+
+### 🧪 Step-by-Step: Test Microphone
+
+1. Run the mic test script:
+   ```bash
+   python mic_test.py
+    ```
+2. A short audio clip will be recorded and saved as test.wav.
+5. Listen to the `test.wav` to confirm the mic is working.
+
+💡 If nothing records or waveform is flat:
+
+- Check OS mic permissions
